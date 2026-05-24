@@ -1,0 +1,198 @@
+---
+const techGroups = [
+  {
+    icon: '🧠',
+    label: 'Primary Languages',
+    accent: true,
+    items: [
+      { name: 'JavaScript', color: '#F7DF1E', text: '#000', logo: 'js' },
+      { name: 'TypeScript', color: '#3178C6', text: '#fff', logo: 'ts' },
+      { name: 'Rust', color: '#CE422B', text: '#fff', logo: '🦀' },
+    ]
+  },
+  {
+    icon: '🧪',
+    label: 'Also Explored',
+    items: [
+      { name: 'Python', color: '#3776AB', text: '#fff' },
+      { name: 'Go', color: '#00ADD8', text: '#fff' },
+      { name: 'Kotlin', color: '#7F52FF', text: '#fff' },
+      { name: 'Java', color: '#ED8B00', text: '#fff' },
+      { name: 'C++', color: '#00599C', text: '#fff' },
+      { name: 'PHP', color: '#777BB4', text: '#fff' },
+      { name: 'Dart', color: '#0175C2', text: '#fff' },
+    ]
+  },
+  {
+    icon: '🎨',
+    label: 'Frontend',
+    items: [
+      { name: 'React', color: '#61DAFB', text: '#000' },
+      { name: 'Next.js', color: '#000', text: '#fff' },
+      { name: 'Vue.js', color: '#4FC08D', text: '#fff' },
+      { name: 'Astro', color: '#FF5D01', text: '#fff' },
+      { name: 'TailwindCSS', color: '#06B6D4', text: '#fff' },
+      { name: 'Sass', color: '#CC6699', text: '#fff' },
+      { name: 'jQuery', color: '#0769AD', text: '#fff' },
+    ]
+  },
+  {
+    icon: '⚙️',
+    label: 'Backend',
+    items: [
+      { name: 'Express.js', color: '#000', text: '#fff' },
+      { name: 'Axum', color: '#CE422B', text: '#fff' },
+      { name: 'Laravel', color: '#FF2D20', text: '#fff' },
+      { name: 'Django', color: '#092E20', text: '#fff' },
+      { name: 'CodeIgniter', color: '#EF4223', text: '#fff' },
+      { name: 'Fat-Free F3', color: '#4A90D9', text: '#fff' },
+    ]
+  },
+  {
+    icon: '📱',
+    label: 'Mobile & Desktop',
+    items: [
+      { name: 'Flutter', color: '#02569B', text: '#fff' },
+      { name: 'React Native', color: '#61DAFB', text: '#000' },
+      { name: 'Tauri', color: '#FFC131', text: '#000' },
+    ]
+  },
+  {
+    icon: '🗄️',
+    label: 'Databases',
+    items: [
+      { name: 'PostgreSQL', color: '#4169E1', text: '#fff' },
+      { name: 'MySQL', color: '#4479A1', text: '#fff' },
+      { name: 'SQLite', color: '#003B57', text: '#fff' },
+      { name: 'IndexedDB', color: '#FF6F00', text: '#fff' },
+    ]
+  },
+  {
+    icon: '🧰',
+    label: 'Tools & Environment',
+    items: [
+      { name: 'Neovim', color: '#57A143', text: '#fff' },
+      { name: 'VSCode', color: '#007ACC', text: '#fff' },
+      { name: 'Zed', color: '#084CCF', text: '#fff' },
+      { name: 'Git', color: '#F05032', text: '#fff' },
+      { name: 'Podman', color: '#892CA0', text: '#fff' },
+      { name: 'Arch Linux', color: '#1793D1', text: '#fff' },
+      { name: 'Ubuntu', color: '#E95420', text: '#fff' },
+      { name: 'Proxmox', color: '#E57000', text: '#fff' },
+      { name: 'Fish Shell', color: '#4AAE46', text: '#fff' },
+      { name: 'Postman', color: '#FF6C37', text: '#fff' },
+    ]
+  },
+  {
+    icon: '🔭',
+    label: 'Currently Exploring',
+    exploring: true,
+    items: [
+      { name: 'WASM', color: '#654FF0', text: '#fff' },
+      { name: 'Deno', color: '#000', text: '#fff' },
+      { name: 'Leptos', color: '#CE422B', text: '#fff' },
+      { name: 'Caddy', color: '#1F88C0', text: '#fff' },
+      { name: 'Coraza', color: '#2E7D32', text: '#fff' },
+      { name: 'Golang deeper', color: '#00ADD8', text: '#fff' },
+    ]
+  },
+];
+
+// Flat list for marquee
+const allTech = techGroups.flatMap(g => g.items.map(i => ({ ...i, group: g.label })));
+---
+
+<section id="stack" style="padding: 5rem 0; background: var(--surface); overflow: hidden;">
+
+  <!-- Section header -->
+  <div style="max-width: 1000px; margin: 0 auto 3rem; padding: 0 1.5rem;">
+    <span class="section-tag">// tech-stack</span>
+    <h2 style="font-family: var(--display); font-size: clamp(2rem, 5vw, 3rem); font-weight: 800; margin: 0.5rem 0 0.75rem; line-height: 1.1;">
+      What I work <span style="color: var(--orange);">with</span>
+    </h2>
+    <p style="color: var(--ink-muted); font-size: 0.95rem; max-width: 500px;">
+      A chaotic but intentional collection — languages, frameworks, and tools I've actually shipped things with.
+    </p>
+  </div>
+
+  <!-- Marquee strip -->
+  <div class="marquee-wrapper" style="margin-bottom: 3.5rem; padding: 0.75rem 0; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); background: white;">
+    <div class="marquee-inner" style="gap: 0.6rem; padding: 0 0.3rem;">
+      {[...allTech, ...allTech].map(item => (
+        <span style={`
+          display: inline-flex;
+          align-items: center;
+          gap: 5px;
+          padding: 4px 12px;
+          border-radius: 99px;
+          font-size: 0.72rem;
+          font-weight: 600;
+          font-family: var(--mono);
+          background: ${item.color};
+          color: ${item.text};
+          white-space: nowrap;
+          opacity: 0.85;
+        `}>
+          {item.name}
+        </span>
+      ))}
+    </div>
+  </div>
+
+  <!-- Tech groups grid -->
+  <div style="max-width: 1000px; margin: 0 auto; padding: 0 1.5rem; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.25rem;">
+    {techGroups.map(group => (
+      <div style={`
+        background: white;
+        border: 1px solid ${group.accent ? 'rgba(255,107,53,0.35)' : 'var(--border)'};
+        border-radius: 16px;
+        padding: 1.25rem;
+        ${group.accent ? 'box-shadow: 0 0 0 3px rgba(255,107,53,0.08);' : ''}
+      `}>
+        <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 0.9rem;">
+          <span style="font-size: 1.2rem;">{group.icon}</span>
+          <span style={`
+            font-family: var(--mono);
+            font-size: 0.72rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            font-weight: 600;
+            color: ${group.accent ? 'var(--orange)' : group.exploring ? '#7c3aed' : 'var(--ink-muted)'};
+          `}>{group.label}</span>
+          {group.exploring && (
+            <span style="
+              margin-left: auto;
+              font-size: 0.6rem;
+              font-family: var(--mono);
+              padding: 2px 7px;
+              border-radius: 99px;
+              background: rgba(124,58,237,0.1);
+              color: #7c3aed;
+              font-weight: 600;
+            ">wip</span>
+          )}
+        </div>
+        <div style="display: flex; flex-wrap: wrap; gap: 6px;">
+          {group.items.map(item => (
+            <span style={`
+              display: inline-flex;
+              align-items: center;
+              padding: 4px 10px;
+              border-radius: 99px;
+              font-size: 0.72rem;
+              font-weight: 500;
+              font-family: var(--mono);
+              background: ${item.color}18;
+              color: ${item.color === '#fff' || item.color === '#000' ? 'var(--ink-muted)' : item.color};
+              border: 1px solid ${item.color}30;
+              white-space: nowrap;
+            `}>
+              {item.name}
+            </span>
+          ))}
+        </div>
+      </div>
+    ))}
+  </div>
+
+</section>

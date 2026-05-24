@@ -1,0 +1,46 @@
+---
+const focuses = [
+  { emoji: '🔨', title: 'Developer Tooling', desc: 'Building personal developer tools and productivity workflows that scratch my own itch.' },
+  { emoji: '🦀', title: 'Rust + WASM', desc: 'Exploring WebAssembly and modern Rust development — Leptos, Axum, Coraza.' },
+  { emoji: '⚡', title: 'Async & Concurrency', desc: 'Deepening understanding of asynchronous and concurrent programming patterns.' },
+  { emoji: '🖥️', title: 'Systems Programming', desc: 'Learning low-level and systems programming fundamentals from the ground up.' },
+  { emoji: '🚀', title: 'Web Performance', desc: 'Improving web performance, DX, and developer experience across the stack.' },
+  { emoji: '🐧', title: 'Self-Hosted Linux', desc: 'Experimenting with Linux tooling, Proxmox, and self-hosted environments.' },
+  { emoji: '📐', title: 'Architecture', desc: 'Studying scalable, optimized web architectures and clean system design.' },
+  { emoji: '✨', title: 'Clean UI/UX', desc: 'Continuously refining maintainable, accessible, and beautiful interface design.' },
+];
+---
+
+<section id="focus" style="padding: 6rem 1.5rem; max-width: 1000px; margin: 0 auto;">
+  
+  <div style="margin-bottom: 3.5rem;">
+    <span class="section-tag">// current-focus</span>
+    <h2 style="font-family: var(--display); font-size: clamp(2rem, 5vw, 3rem); font-weight: 800; margin: 0.5rem 0 0.75rem; line-height: 1.1;">
+      What I'm <span style="color: var(--orange);">shipping</span> now
+    </h2>
+    <p style="color: var(--ink-muted); font-size: 0.95rem; max-width: 500px;">
+      Active rabbit holes, ongoing experiments, and things that currently live rent-free in my head.
+    </p>
+  </div>
+
+  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem;">
+    {focuses.map((item, i) => (
+      <div class="card" style={`
+        animation: fadeUp 0.5s ${i * 0.05}s ease both;
+        cursor: default;
+      `}>
+        <div style="font-size: 1.5rem; margin-bottom: 0.75rem;">{item.emoji}</div>
+        <h3 style="font-family: var(--display); font-size: 0.95rem; font-weight: 700; margin: 0 0 0.4rem; color: var(--ink);">{item.title}</h3>
+        <p style="font-size: 0.82rem; color: var(--ink-muted); margin: 0; line-height: 1.6;">{item.desc}</p>
+      </div>
+    ))}
+  </div>
+
+</section>
+
+<style>
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+</style>

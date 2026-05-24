@@ -1,0 +1,106 @@
+---
+---
+
+<section id="about" style="padding: 6rem 1.5rem; max-width: 1000px; margin: 0 auto;">
+  
+  <div style="margin-bottom: 3.5rem;">
+    <span class="section-tag">// about</span>
+    <h2 style="font-family: var(--display); font-size: clamp(2rem, 5vw, 3rem); font-weight: 800; margin: 0.5rem 0 0; line-height: 1.1;">
+      Who is <span style="color: var(--orange);">Si Oyen</span>?
+    </h2>
+  </div>
+
+  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem;">
+
+    <!-- Origin card -->
+    <div class="card" style="grid-column: span 1;">
+      <div style="font-size: 2rem; margin-bottom: 1rem;">🟧</div>
+      <h3 style="font-family: var(--display); font-size: 1.1rem; font-weight: 700; margin: 0 0 0.5rem;">The Name</h3>
+      <p style="color: var(--ink-muted); font-size: 0.9rem; margin: 0; line-height: 1.7;">
+        <strong>c-oyen</strong> comes from <em>"Si Oyen"</em> — the Indonesian nickname for orange cats 
+        (<em>kucing oren</em>). One braincell, infinite curiosity, suspiciously capable.
+      </p>
+    </div>
+
+    <!-- What I do -->
+    <div class="card" style="grid-column: span 1;">
+      <div style="font-size: 2rem; margin-bottom: 1rem;">💻</div>
+      <h3 style="font-family: var(--display); font-size: 1.1rem; font-weight: 700; margin: 0 0 0.5rem;">What I Do</h3>
+      <p style="color: var(--ink-muted); font-size: 0.9rem; margin: 0; line-height: 1.7;">
+        Passionate about software engineering, web technologies, and developer tooling. 
+        I enjoy experimenting with new stacks, workflows, and infrastructure setups.
+      </p>
+    </div>
+
+    <!-- How I work -->
+    <div class="card" style="grid-column: span 1;">
+      <div style="font-size: 2rem; margin-bottom: 1rem;">🔧</div>
+      <h3 style="font-family: var(--display); font-size: 1.1rem; font-weight: 700; margin: 0 0 0.5rem;">How I Work</h3>
+      <p style="color: var(--ink-muted); font-size: 0.9rem; margin: 0; line-height: 1.7;">
+        I learn by doing — building random things, breaking stuff responsibly, 
+        and constantly refining both technical and problem-solving skills.
+      </p>
+    </div>
+
+    <!-- Fuel -->
+    <div class="card" style="
+      background: var(--orange);
+      border-color: var(--orange-dark);
+      color: white;
+    ">
+      <div style="font-size: 2rem; margin-bottom: 1rem;">☕</div>
+      <h3 style="font-family: var(--display); font-size: 1.1rem; font-weight: 700; margin: 0 0 0.5rem; color: white;">Fuel</h3>
+      <p style="font-size: 0.9rem; margin: 0; line-height: 1.7; opacity: 0.9;">
+        Powered by curiosity, coffee, and orange-cat energy. 
+        Orange cats are known for sharing one braincell — 
+        sometimes I get scheduled access to it while coding.
+      </p>
+    </div>
+
+  </div>
+
+  <!-- Quick stat row -->
+  <div style="
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 2rem;
+    padding: 1.5rem;
+    background: var(--surface);
+    border-radius: 16px;
+    border: 1px solid var(--border);
+  ">
+    {[
+      { emoji: '🌐', label: 'GitHub', value: 'c-oyen', href: 'https://github.com/c-oyen' },
+      { emoji: '🌍', label: 'Website', value: 'c-oyen.github.io', href: 'https://c-oyen.github.io' },
+    ].map(item => (
+      <a href={item.href} target="_blank" style="
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 10px 16px;
+        background: white;
+        border: 1px solid var(--border);
+        border-radius: 10px;
+        text-decoration: none;
+        color: var(--ink);
+        font-size: 0.85rem;
+        transition: all 0.15s;
+        flex: 1;
+        min-width: 180px;
+      "
+      onmouseover="this.style.borderColor='var(--orange)';this.style.transform='translateY(-2px)'"
+      onmouseout="this.style.borderColor='var(--border)';this.style.transform='translateY(0)'">
+        <span style="font-size: 1.1rem;">{item.emoji}</span>
+        <div>
+          <div style="font-size: 0.68rem; color: var(--ink-faint); font-family: var(--mono); text-transform: uppercase; letter-spacing: 0.05em;">{item.label}</div>
+          <div style="font-weight: 500;">{item.value}</div>
+        </div>
+        <svg style="margin-left: auto; opacity: 0.3;" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/>
+        </svg>
+      </a>
+    ))}
+  </div>
+
+</section>
